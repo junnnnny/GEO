@@ -215,8 +215,10 @@ def impression_subjective_impression(sentences, query, n = 5, normalize = True, 
     return returnable_score_from_scores(scores)
 
 import os
-CACHE_FILE = os.environ.get('GLOBAL_CACHE_FILE', 'global_cache.json')
-# CACHE_FILE = 'global_cache.json'
+
+# Use a cache file relative to this file by default
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_FILE = os.environ.get('GLOBAL_CACHE_FILE', os.path.join(_BASE_DIR, 'global_cache.json'))
 
 from search_try import search_handler
 from generative_le import generate_answer
