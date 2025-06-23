@@ -62,8 +62,8 @@ def call_gpt(user_prompt, system_prompt = COMMON_SYSTEM_PROMPT, model = 'gpt-3.5
                 lup = len(messages[-1]['content'])
                 messages[-1]['content'] = messages[-1]['content'][:int(lup * num_tokens_excess)]  
             if attempt > 5:
-                messages[0]['content'][:-200]       
-                messages[-1]['content'][:-1000]       
+                messages[0]['content'] = messages[0]['content'][:-200]
+                messages[-1]['content'] = messages[-1]['content'][:-1000]
             print(messages)
             import time
             time.sleep(15)
