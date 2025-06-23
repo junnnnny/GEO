@@ -94,17 +94,20 @@ def search_handler(req, source_count = 8):
                 links.append(cleaned_href)
                 print(cleaned_href)
 
-    exclude_list = ["google", "facebook", "twitter", "instagram", "youtube", "tiktok","quora"]
+    exclude_list = ["google", "facebook", "twitter", "instagram", "youtube", "tiktok", "quora"]
     filtered_links = []
-    links = set(list(links))
     for link in links:
         try:
-            if urlparse(link).hostname.split('.')[1] not in exclude_list:
-                filtered_links.append(link)
-        except: ...
-    filtered_links = [link for idx, link in enumerate(links) if urlparse(link).hostname.split('.')[1] not in exclude_list and links.index(link) == idx]
+            host = urlparse(link).hostname
+            if host:
+                parts = host.split('.')
+                if len(parts) > 1 and parts[1] not in exclude_list:
+                    filtered_links.append(link)
+        except Exception:
+            continue
 
-    final_links = filtered_links#[:source_count]
+    # Keep the original order and limit the number of links
+    final_links = filtered_links[:source_count]
 
     # SCRAPE TEXT FROM LINKS
     sources = []
