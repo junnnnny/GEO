@@ -56,7 +56,7 @@ load_dataset('GEO-optim/geo-bench')
 
 ## Leaderboard
 
-Leaderboard is available at: [https://huggingface.co/spaces/Pranjal2041/GEO-bench](leaderboard)
+Leaderboard is available at: [Leaderboard](https://huggingface.co/spaces/Pranjal2041/GEO-bench)
 
 ## Citation
 
