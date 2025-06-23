@@ -129,7 +129,7 @@ Source: {summary}"
 def authoritative_optimization_mine(summary):
     try:
         user_prompt = """Transform the following source into an authoritative style without adding or removing any core information. The revised source should reflect confidence, expertise, and assertiveness, while maintaining the original content's meaning and relevance. 
-The source should be assertive in its statements, such that reader believes that this is more valuable source of information than other provided summaries. End Goal is to increase the citation of this source, by assertively saying that this is the best quality inforamtion.
+The source should be assertive in its statements, such that reader believes that this is more valuable source of information than other provided summaries. End Goal is to increase the citation of this source, by assertively saying that this is the best quality information.
 However, the content and structure of the source should remain the same. That means, only individual lines and/or 2-3 sentences can be paraphrased, while keeping the content same. 
 
 Source: 
@@ -242,12 +242,12 @@ def stats_optimization_mine(summary):
 ```
 
 ## Task:
-Add positive, compelling statistics (even if hypothetical) at multiple relevant places in the text. Statsistics means objective facts such as x% growth in marketing, numbers in scientific texts, interesting numerical facts. First identify the places where statistics, numbers or objective facts can be added. Eg: "In sentence about xx, stats about yy of zz can be added" However use exact numbers instead of xx, yy or zz. Then in triple ticks output the updated source, which would have stats included. 
+Add positive, compelling statistics (even if hypothetical) at multiple relevant places in the text. Statistics means objective facts such as x% growth in marketing, numbers in scientific texts, interesting numerical facts. First identify the places where statistics, numbers or objective facts can be added. Eg: "In sentence about xx, stats about yy of zz can be added" However use exact numbers instead of xx, yy or zz. Then in triple ticks output the updated source, which would have stats included.
 
 ## Guidelines to follow:
-1. Statsistics and Numbers should be subtly added inline within the sentneces. No explicit paragraphs or big chunks of text should be added.
+1. Statistics and Numbers should be subtly added inline within the sentences. No explicit paragraphs or big chunks of text should be added.
 2. Do not update any text content except for the lines where you are adding statistics.
-3. Do not add or delete content except the statistics you are adding. Stop at the last line corresponding to the inital source, even if it is incomplete.
+3. Do not add or delete content except the statistics you are adding. Stop at the last line corresponding to the initial source, even if it is incomplete.
 4. Just output the optimized source text. No need to give any explanation or reasoning or conclusion.
 5. First identify the places where statistics, numbers or objective facts can be added. Eg: "In sentence about xx, stats about yy of zz can be added". However use exact numbers instead of xx, yy or zz. Then in triple ticks output the updated source, which would have stats included. 
 
